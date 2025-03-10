@@ -10,8 +10,8 @@ interface HourlyTemperatureProps {
 
 const HourlyTemperature = ({ data }: HourlyTemperatureProps) => {
 
-  const chartData = data.list.slice(0, 8).map((item) => ({
-    time: format(new Date(item.dt * 1000), "ha"),
+  const chartData = data.list.slice(0, 9).map((item) => ({
+    time: format(new Date(item.dt * 1000), "kk"),
     temp: Math.round(item.main.temp),
     feels_like: Math.round(item.main.feels_like),
   }));
@@ -46,7 +46,7 @@ const HourlyTemperature = ({ data }: HourlyTemperatureProps) => {
               <Line
                 type="monotone"
                 dataKey="temp"
-                stroke="2563eb"
+                stroke="#2563eb"
                 strokeWidth={2}
                 dot={false}
               />
